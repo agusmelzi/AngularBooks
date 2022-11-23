@@ -11,7 +11,7 @@ export class BookListComponent implements OnInit {
     "titulo" : "Al asalto del Cielo",
     "autor" : "Louis De Wohl",
     "editorial" : "Arcaduz",
-    "imagen" : "assets/img/al asalto del cielo.jpg"
+    "imagen" : "/assets/img/al asalto del cielo.jpg"
   }
 
   constructor() { }
