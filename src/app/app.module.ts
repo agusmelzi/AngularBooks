@@ -8,6 +8,8 @@ import { LibraryAboutComponent } from './library-about/library-about.component';
 import { CartComponent } from './cart/cart.component';
 import { LibraryBooksComponent } from './library-books/library-books.component';
 
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { LibraryBooksComponent } from './library-books/library-books.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

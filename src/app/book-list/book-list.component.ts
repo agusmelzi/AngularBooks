@@ -14,9 +14,10 @@ export class BookListComponent implements OnInit {
       autor: "Louis De Wohl",
       editorial: "Arcaduz",
       precio: 200,
-      stock: 21,
+      stock: 7,
       imagen: "/assets/img/al asalto del cielo.jpg",
       clearance: false,
+      quantity: 0,
     },
     {
       titulo: "Don Quijote",
@@ -26,6 +27,7 @@ export class BookListComponent implements OnInit {
       stock: 0,
       imagen: "/assets/img/don quijote.jpg",
       clearance: true,
+      quantity: 0,
     },
     {
       titulo: "Marianela",
@@ -35,11 +37,28 @@ export class BookListComponent implements OnInit {
       stock: 21,
       imagen: "/assets/img/marianela.jpg",
       clearance: false,
+      quantity: 0,
     }
   ];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  upQuantity(book: Book): void {
+    if (book.quantity<book.stock) {
+      book.quantity++;
+    }
+  }
+
+  downQuantity(book: Book): void {
+    if (book.quantity>0) {
+      book.quantity--;
+    }
+  }
+
+  changeQuantity(event, book: Book): void {
+    
   }
 
 }

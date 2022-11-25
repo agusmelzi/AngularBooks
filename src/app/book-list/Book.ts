@@ -5,5 +5,6 @@ export interface Book {
     precio: number,
     stock: number,
     imagen: string,
-    clearance: boolean
+    clearance: boolean,
+    quantity: number,
 }
