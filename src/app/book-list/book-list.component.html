@@ -19,9 +19,7 @@
         <td>{{book.precio | currency}}</td>
         <td><span class="badge text-bg-warning" *ngIf="book.stock == 0">Sin stock</span></td>
         <td>
-          <button type="button" class="btn btn-primary" (click)="downQuantity(book)">-</button>
-          <input type="text" [(ngModel)]="book.quantity" (keyup)="changeQuantity($event, book)">
-          <button type="button" class="btn btn-primary" (click)="upQuantity(book)">+</button>
+          <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" (maxReached)="maxReached($event)"></app-input-integer>
         </td>
       </tr>
     </tbody>

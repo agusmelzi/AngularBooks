@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { LibraryBooksComponent } from './library-books/library-books.component';
 
 import { FormsModule } from "@angular/forms";
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from "@angular/forms";
     BookListComponent,
     LibraryAboutComponent,
     CartComponent,
-    LibraryBooksComponent
+    LibraryBooksComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

@@ -45,20 +45,8 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(book: Book): void {
-    if (book.quantity<book.stock) {
-      book.quantity++;
-    }
-  }
-
-  downQuantity(book: Book): void {
-    if (book.quantity>0) {
-      book.quantity--;
-    }
-  }
-
-  changeQuantity(event, book: Book): void {
-    
+  maxReached(m: string) {
+    alert(m);
   }
 
 }
