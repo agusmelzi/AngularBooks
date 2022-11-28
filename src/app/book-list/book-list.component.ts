@@ -45,6 +45,10 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToCart(book): void {
+    
+  }
+
   maxReached(m: string) {
     alert(m);
   }
