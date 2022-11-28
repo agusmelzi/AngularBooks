@@ -9,6 +9,7 @@
         <th scope="col">PRECIO</th>
         <th scope="col">STOCK</th>
         <th scope="col">CANTIDAD</th>
+        <th scope="col">COMPRA</th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +23,9 @@
         <td>
           <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" (maxReached)="maxReached($event)">
           </app-input-integer>
+        </td>
+        <td>
+          <button class="btn btn-dark" (click)="addToCart(book)">Comprar</button>
         </td>
       </tr>
     </tbody>

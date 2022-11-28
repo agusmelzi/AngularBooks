@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BookCartService } from '../book-cart.service';
+import { CartComponent } from '../cart/cart.component';
 import { Book } from './Book';
 
 @Component({
@@ -40,13 +42,18 @@ export class BookListComponent implements OnInit {
       quantity: 0,
     }
   ];
-  constructor() { }
+
+  constructor(private cart: BookCartService) { 
+    
+  }
 
   ngOnInit(): void {
   }
 
   addToCart(book): void {
-    
+    this.cart.addToCart(book);
+    book.stock -= book.quantity;
+    book.quantity = 0;
   }
 
   maxReached(m: string) {
