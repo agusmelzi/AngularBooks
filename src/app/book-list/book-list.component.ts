@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookCartService } from '../book-cart.service';
+import { BookDataService } from '../book-data.service';
 import { CartComponent } from '../cart/cart.component';
 import { Book } from './Book';
 
@@ -10,8 +11,8 @@ import { Book } from './Book';
 })
 export class BookListComponent implements OnInit {
 
-  books: Book[] = [
-    {
+  books: Book[] = [];
+    /*{
       titulo: "Al asalto del Cielo",
       autor: "Louis De Wohl",
       editorial: "Arcaduz",
@@ -23,7 +24,7 @@ export class BookListComponent implements OnInit {
     },
     {
       titulo: "Don Quijote",
-      autor: "Louis De Wohl",
+      autor: "Miguel De Cervantes",
       editorial: "Libsa",
       precio: 200,
       stock: 0,
@@ -33,7 +34,7 @@ export class BookListComponent implements OnInit {
     },
     {
       titulo: "Marianela",
-      autor: "Louis De Wohl",
+      autor: "Benito Perez Galdós",
       editorial: "Hernando",
       precio: 200,
       stock: 21,
@@ -41,13 +42,17 @@ export class BookListComponent implements OnInit {
       clearance: false,
       quantity: 0,
     }
-  ];
+  ];*/
 
-  constructor(private cart: BookCartService) { 
+  constructor(
+    private cart: BookCartService,
+    private bookDataService: BookDataService) { 
     
   }
 
   ngOnInit(): void {
+    this.bookDataService.getAll()
+    .subscribe(books => this.books = books);
   }
 
   addToCart(book): void {

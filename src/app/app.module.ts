@@ -10,6 +10,7 @@ import { LibraryBooksComponent } from './library-books/library-books.component';
 
 import { FormsModule } from "@angular/forms";
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
