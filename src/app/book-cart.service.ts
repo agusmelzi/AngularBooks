@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { BookDataService } from './book-data.service';
 import { Book } from './book-list/Book';
 
 @Injectable({
@@ -21,5 +22,16 @@ export class BookCartService {
     }
     this.cartList.next(this._cartList);
   }
+
+  removeToCart(book: Book) {
+    let item: Book = this._cartList.find((v1) => v1.titulo == book.titulo);
+    for (let index = 0; index < this._cartList.length; index++) {
+      if (item.titulo == this._cartList[index].titulo) {
+        this._cartList.splice(index);
+      }
+    }
+  }
+
+
 
 }

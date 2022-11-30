@@ -3,4 +3,7 @@
     <li class="list-group-item">
         {{book.titulo}}: {{book.quantity}}
     </li>
-  </ul>
+    <li class="list-group-item">
+        <button (click)="removeToCart(book)">Remove</button>
+    </li>
+</ul>
