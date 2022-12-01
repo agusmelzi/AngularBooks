@@ -1,9 +1,9 @@
-<h3>Carrito de compras</h3>
+<h3>Carrito de compras <i class="fa-solid fa-cart-shopping"></i></h3>
 <ul class="list-group" *ngFor="let book of cartList$ | async">
     <li class="list-group-item">
-        {{book.titulo}}: {{book.quantity}}
+        <span class="titulo">{{book.titulo}}:</span> {{book.quantity}}
     </li>
     <li class="list-group-item">
-        <button (click)="removeToCart(book)">Remove</button>
+        <button class="btn btn-light" (click)="removeToCart(book)">Remove</button>
     </li>
 </ul>
